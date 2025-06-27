@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passenger Survival Prediction</title>
+</head>
+<body>
+    <h2>Enter Passenger Data</h2>
+    <form action="/predict" method="POST">
+        <label>Pclass:</label><input type="number" name="Pclass"><br>
+        <label>Sex (0 = female, 1 = male):</label><input type="number" name="Sex"><br>
+        <label>Age:</label><input type="number" step="any" name="Age"><br>
+        <label>SibSp:</label><input type="number" name="SibSp"><br>
+        <label>Parch:</label><input type="number" name="Parch"><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
